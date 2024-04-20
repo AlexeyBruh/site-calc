@@ -1,0 +1,21 @@
+.Mainpage span {
+    font-size: 4em;
+    font-weight: 300;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#MainPic {
+    display: flex;
+    margin: 3em;
+
+    justify-content: space-between;
+}
+
+.MainBottom {
+    font-size: 64px;
+    height: 7.8rem;
+    font-weight: 300;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background-color: #8BDBFD;
+}

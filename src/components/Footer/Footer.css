@@ -1,0 +1,14 @@
+.Footer {
+    background-color: #090040;
+    height: 7.8rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 300;
+    color: #FFFFFF;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 5%;
+    padding: 0 15%;
+    vertical-align: center;
+    line-height: 7.8rem;
+}
