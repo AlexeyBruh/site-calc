@@ -1,0 +1,43 @@
+.Calculators {
+  display: flex;
+  margin: 6rem;
+  justify-content: space-between;
+}
+
+.Button {
+  width: 296px;
+  height: 76px;
+  border-radius: 5px;
+  background-color: #0e015c;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  color: #ffffff;
+  border: 0;
+  margin-bottom: 1%;
+  cursor: pointer;
+}
+.ButtonDone {
+  width: 400px;
+  height: 64px;
+  border-radius: 19px;
+  background-color: #8BDBFD;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  border: 0;
+  margin-bottom: 1%;
+  cursor: pointer;
+}
+
+
+#but button:hover {
+  background-color: rgb(135, 135, 241);
+  transition: 0.5s;
+}
+#but button:active {
+  background-color: #f10909;
+}
+
+
+
