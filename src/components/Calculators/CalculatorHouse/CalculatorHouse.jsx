@@ -1,6 +1,8 @@
 import "./CalculatorHouse.css";
 import { useState } from "react";
 import picChMark from "../Checkmark1.png";
+import axios from "axios";
+import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 export default function CalculatorWall() {
   const [widtMat, setwidtMat] = useState("");
@@ -9,10 +11,83 @@ export default function CalculatorWall() {
   const [lengWall, setlengWall] = useState("");
   const [highMat, sethighMat] = useState("");
   const [highWall, sethighWall] = useState("");
-  const [CountWall, setCountWall] = useState("");
   const [SizeMat, setSizeMat] = useState("milimetre");
   const [SizeWall, setSizeWall] = useState("milimetre");
-  const [output, setOutput] = useState("");
+  const [result, setResult] = useState("");
+  const [CountWall, setCountWall] = useState("");
+
+  const fetchCalculator = async () => {
+    try {
+      const response = await axios.post("http://localhost:8000/calculate", {
+        widtMat,
+        widtWall,
+        lengMat,
+        lengWall,
+        highMat,
+        highWall,
+        SizeMat,
+        SizeWall,
+        CountWall,
+      });
+      const result = response.data.result;
+      setResult(result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleCountWallChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setCountWall(value);
+    }
+  };
+
+  const handleWidthMatChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setwidtMat(value);
+    }
+  };
+
+  const handleWidthWallChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setwidtWall(value);
+    }
+  };
+
+  const handleLengthMatChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setlengMat(value);
+    }
+  };
+
+  const handleLengthWallChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setlengWall(value);
+    }
+  };
+
+  const handleHeightMatChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      sethighMat(value);
+    }
+  };
+
+  const handleHeightWallChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      sethighWall(value);
+    }
+  };
+
+  const handleCalculate = () => {
+    fetchCalculator();
+  };
 
   return (
     <div className="CalculatorHouse">
@@ -25,21 +100,21 @@ export default function CalculatorWall() {
             type="number"
             id="widtMat"
             value={widtMat}
-            onChange={(event) => setwidtMat(event.target.value)}
+            onChange={handleWidthMatChange}
           />
           <span id="NameSize">Длина:</span>
           <input
             type="number"
             id="lengMat"
             value={lengMat}
-            onChange={(event) => setlengMat(event.target.value)}
+            onChange={handleLengthMatChange}
           />
           <span id="NameSize">Высота:</span>
           <input
             type="number"
             id="highMat"
             value={highMat}
-            onChange={(event) => sethighMat(event.target.value)}
+            onChange={handleHeightMatChange}
           />
           <span id="NameSize">Еденица Измерения:</span>
           <select
@@ -58,36 +133,39 @@ export default function CalculatorWall() {
           <div>
             <div>
               <span id="NameSize">Ширина:</span>
+
               <input
                 type="number"
                 id="widtWall"
                 value={widtWall}
-                onChange={(event) => setwidtWall(event.target.value)}
+                onChange={handleWidthWallChange}
               />
             </div>
             <div>
               <span id="NameSize">Количество стен:</span>
+
               <input
                 type="number"
-                id="widtWall"
+                id="CountWall"
                 value={CountWall}
-                onChange={(event) => setCountWall(event.target.value)}
+                onChange={handleCountWallChange}
               />
             </div>
           </div>
+          
           <span id="NameSize">Длина:</span>
           <input
             type="number"
             id="lengWall"
             value={lengWall}
-            onChange={(event) => setlengWall(event.target.value)}
+            onChange={handleLengthWallChange}
           />
           <span id="NameSize">Высота:</span>
           <input
             type="number"
             id="highWall"
             value={highWall}
-            onChange={(event) => sethighWall(event.target.value)}
+            onChange={handleHeightWallChange}
           />
           <span id="NameSize">Еденицы Измерения:</span>
           <select
@@ -104,19 +182,18 @@ export default function CalculatorWall() {
       <div className="LineCalc"></div>
       <div className="Result">
         <div id="but">
-          <button className="ButtonDone">
+          <button className="ButtonDone" onClick={handleCalculate}>
             <img src={picChMark} alt="" />
             Рассчитать
           </button>
         </div>
         <div>
-          <span id="Result">Необходимо материалов:</span>
-          <br />
+          <span id="Result">Необходимо материалов: </span><br />
           <input
             type="text"
             id="output"
             readOnly
-            value={output ? output : "Заполните все поля"}
+            value={result ? result * CountWall : "Заполните все поля"}
           />
         </div>
       </div>
