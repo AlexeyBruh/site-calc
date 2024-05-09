@@ -3,6 +3,8 @@ import { useState } from "react";
 import picChMark from "../Checkmark1.png";
 import axios from "axios";
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
+import picBrick from "../Кирпичи.svg";
+import picBrickWall from "../СтенаКирпичей.svg";
 
 export default function CalculatorWall() {
   const [widtMat, setwidtMat] = useState("");
@@ -95,28 +97,33 @@ export default function CalculatorWall() {
       <div>
         <div className="Calc">
           <span className="HeadName">Габариты материала (Кирпич)</span>
+          <br />
           <span id="NameSize">Ширина:</span>
+          <br />
+          <img src={picBrick} alt="Кирпичи" className="CalcPicDiv" />
           <input
             type="number"
             id="widtMat"
             value={widtMat}
             onChange={handleWidthMatChange}
-          />
-          <span id="NameSize">Длина:</span>
+          />{" "}
+          <br />
+          <span id="NameSize">Длина:</span> <br />
           <input
             type="number"
             id="lengMat"
             value={lengMat}
             onChange={handleLengthMatChange}
-          />
-          <span id="NameSize">Высота:</span>
+          />{" "}
+          <br />
+          <span id="NameSize">Высота:</span> <br />
           <input
             type="number"
             id="highMat"
             value={highMat}
             onChange={handleHeightMatChange}
           />
-          <span id="NameSize">Еденица Измерения:</span>
+          <span id="NameSize">Еденица Измерения:</span> <br />
           <select
             id="SizeMat"
             value={SizeMat}
@@ -129,8 +136,8 @@ export default function CalculatorWall() {
         </div>
         <div className="LineCalc"></div>
         <div className="Calc">
-          <span className="HeadName">Габариты элемента строения</span>
-          <div>
+          <span className="HeadName">Габариты элемента строения</span> <br />
+          <div className="RowCalc">
             <div>
               <span id="NameSize">Ширина:</span>
 
@@ -143,7 +150,6 @@ export default function CalculatorWall() {
             </div>
             <div>
               <span id="NameSize">Количество стен:</span>
-
               <input
                 type="number"
                 id="CountWall"
@@ -152,22 +158,25 @@ export default function CalculatorWall() {
               />
             </div>
           </div>
-          
           <span id="NameSize">Длина:</span>
+          <br />
+          <img src={picBrickWall} alt="Кирпичи" className="CalcPicDiv" />
           <input
             type="number"
             id="lengWall"
             value={lengWall}
             onChange={handleLengthWallChange}
-          />
-          <span id="NameSize">Высота:</span>
+          />{" "}
+          <br />
+          <span id="NameSize">Высота:</span> <br />
           <input
             type="number"
             id="highWall"
             value={highWall}
             onChange={handleHeightWallChange}
-          />
-          <span id="NameSize">Еденицы Измерения:</span>
+          />{" "}
+          <br />
+          <span id="NameSize">Еденицы Измерения:</span> <br />
           <select
             id="SizeWall"
             value={SizeWall}
@@ -188,7 +197,8 @@ export default function CalculatorWall() {
           </button>
         </div>
         <div>
-          <span id="Result">Необходимо материалов: </span><br />
+          <span id="Result">Необходимо материалов: </span>
+          <br />
           <input
             type="text"
             id="output"

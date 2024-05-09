@@ -17,10 +17,12 @@
   border-block-end-style: solid;
 }
 
-.Calc {
+/* .Calc {
   display: flex;
   flex-direction: column;
-}
+  flex-wrap: wrap;
+} */
+
 .LineCalc {
   border-bottom-width: 1px;
   border-block-end-style: solid;
@@ -28,9 +30,9 @@
   margin-bottom: 2rem;
 }
 
-.HeadName {
+/* .HeadName {
   margin-bottom: 3rem;
-}
+} */
 
 .CalculatorWall span {
   font-size: 35px;
@@ -74,6 +76,15 @@
   width: 270px;
 }
 
+.CalcPicDiv {
+  /* display: flex;
+  justify-content: right; */
+  margin-left: auto;
+  float: right;
+  width: 400px;
+  height: 273px;
+}
+
 #but {
   text-align: center;
   margin-bottom: 3rem;
@@ -83,6 +94,6 @@
   width: 437px;
   height: 45px;
   border-radius: 3px;
-  background-color: #8BDBFD75;
+  background-color: #8bdbfd75;
   padding-left: 0.5rem;
 }

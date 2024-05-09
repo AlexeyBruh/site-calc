@@ -1,7 +1,6 @@
 header {
     height: 125px;
     display: flex;
-    padding: 0 2rem;
     justify-content: space-between;
     align-items: center;
     border-style: solid;
@@ -18,17 +17,18 @@ header ul li {
 }
 header ul li button {
     padding: 48px;
-    width: 300px;
+    width: 200px;
     background-color: #8BDBFD;
     border: 0;
     font-size: 24px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
+    text-align: center;
 }
-button:hover {
+header button:hover {
     background-color: rgb(135, 135, 241);
     transition: 0.5s;
 }
-button:active {
+header button:active {
     background-color: #f10909;
 }

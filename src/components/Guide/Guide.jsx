@@ -4,7 +4,7 @@ import pic from '../images/Одна стена 1.png'
 export default function Guide() {
   return (
     <div className="GuidePage">
-      <div className="GuideTop">Инструкция</div>
+      <div className="GuideTop" id="SectionGuide">Инструкция</div>
       <p>
         Нажав на кнопку “Калькулятор” (выберите нужный вам вариант), далее
         откроется поле для выбора и ввода данных, неоходимо ввести габариты

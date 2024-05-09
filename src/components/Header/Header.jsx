@@ -6,9 +6,9 @@ export default function Header() {
         <header>
             <Logo />
             <ul>
-                <li><button>Главная</button></li>
-                <li><button>Инструкция</button></li>
-                <li><button>Калькулятор</button></li>
+                <li><a href="#SectionMain" ><button>Главная</button></a></li>
+                <li><a href="#SectionGuide"><button>Инструкция</button></a></li>
+                <li><a href="#SectionCalc"><button>Калькулятор</button></a></li>
             </ul>
         </header>
     )
