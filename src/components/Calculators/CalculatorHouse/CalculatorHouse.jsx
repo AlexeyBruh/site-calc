@@ -7,6 +7,7 @@ import picBrick from "../Кирпичи.svg";
 import picBrickWall from "../дом-кирпича.png";
 
 export default function CalculatorWall() {
+  const [ChoiceMat, setChoiceMat] = useState("");
   const [widtMat, setwidtMat] = useState("");
   const [lengMat, setlengMat] = useState("");
   const [highMat, sethighMat] = useState("");
@@ -25,6 +26,7 @@ export default function CalculatorWall() {
   const fetchCalculator = async () => {
     try {
       const response = await axios.post("http://localhost:8000/calculate", {
+        ChoiceMat,
         widtMat,
         lengMat,
         highMat,
@@ -45,13 +47,14 @@ export default function CalculatorWall() {
     }
   };
 
+
+
   const handleWidthMatChange = (event) => {
     const value = event.target.value;
     if (!isNaN(value) && Number(value) >= 0) {
       setwidtMat(value);
     }
   };
-
 
   const handleLengthMatChange = (event) => {
     const value = event.target.value;
@@ -132,6 +135,16 @@ export default function CalculatorWall() {
         <div className="Calc">
           <span className="HeadName">Габариты материала (Кирпич)</span>
           <br />
+          <span id="NameSize">Выбор материала</span>
+          <br />
+          <select id="ChoiceMat"  value={ChoiceMat} onChange={(event) => setChoiceMat(event.target.value)}>
+            <option value="Одинарный">Одинарный(250x120x65)</option>
+            <option value="Полуторный">Полуторный(250x120x88)</option>
+            <option value="Двойной">Двойной(250x120x130)</option>
+            <option value="Евроформат">Евроформат(250x85x65)</option>
+            <option value="">Свое значение</option>
+          </select>{" "}
+          <br />
           <span id="NameSize">Ширина:</span>
           <br />
           <img src={picBrick} alt="Кирпичи" className="CalcPicDiv" />
@@ -179,15 +192,13 @@ export default function CalculatorWall() {
           <br />
           <input
             type="number"
-            // id="lengWall"
             value={Perimetre}
             onChange={handlePerimetreChange}
           />{" "}
           <br />
-          <span id="NameSize">Высота:</span> <br />
+          <span id="NameSize">Высота стен:</span> <br />
           <input
             type="number"
-            // id="highWall"
             value={HighWall}
             onChange={handleHeightWallChange}
           />{" "}

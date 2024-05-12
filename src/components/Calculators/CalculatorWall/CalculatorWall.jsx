@@ -117,7 +117,7 @@ export default function CalculatorWall() {
             onChange={handleHeightMatChange}
           />{" "}
           <br />
-          {/* <span id="NameSize">Еденица Измерения:</span> <br />
+          <span id="NameSize">Еденица Измерения:</span> <br />
           <select
             id="SizeMat"
             value={SizeMat}
@@ -126,7 +126,7 @@ export default function CalculatorWall() {
             <option value="millimetre">мм</option>
             <option value="centimetre">см</option>
             <option value="metre">м</option>
-          </select> */}
+          </select>
         </div>
         <div className="LineCalc"></div>
         <div className="Calc">
@@ -159,9 +159,9 @@ export default function CalculatorWall() {
             onChange={handleHeightWallChange}
           />{" "}
           <br />
-          {/* <span id="NameSize">Еденицы Измерения:</span>
+          <span id="NameSize">Еденицы Измерения:</span>
           <br />
-           <select
+          <select
             id="SizeWall"
             value={SizeWall}
             onChange={(event) => setSizeWall(event.target.value)}
@@ -169,7 +169,7 @@ export default function CalculatorWall() {
             <option value="millimetre">мм</option>
             <option value="centimetre">см</option>
             <option value="metre">м</option>
-          </select> */} 
+          </select>
         </div>
       </div>
       <div className="LineCalc"></div>
