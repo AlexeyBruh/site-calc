@@ -20,6 +20,7 @@ export default function CalculatorWall() {
   const [HighWindow, setHighWindow] = useState("");
   const [LengDoor, setLengDoor] = useState("");
   const [LengWindow, setLengWindow] = useState("");
+  const [inputDisabled, setInputDisabled] = useState(false);
 
   const [result, setResult] = useState("");
 
@@ -128,6 +129,38 @@ export default function CalculatorWall() {
     fetchCalculator();
   };
 
+  const handleSelectChange = (event) => {
+    const selectedValue = event.target.value;
+    setChoiceMat(selectedValue);
+
+    if (selectedValue === 'Одинарный') {
+      setwidtMat('250');
+      setlengMat('120')
+      sethighMat('65')
+      setInputDisabled(true);
+    } else if(selectedValue === 'Полуторный') {
+      setwidtMat('250');
+      setlengMat('120')
+      sethighMat('88')
+      setInputDisabled(true);
+    }else if (selectedValue === 'Двойной') {
+      setwidtMat('250');
+      setlengMat('120')
+      sethighMat('130')
+      setInputDisabled(true);
+    }else if (selectedValue === 'Евроформат') {
+      setwidtMat('250');
+      setlengMat('85')
+      sethighMat('65')
+      setInputDisabled(true);
+    }else {
+      setwidtMat('');
+      setlengMat('')
+      sethighMat('')
+      setInputDisabled(false);
+    }
+  };
+
   return (
     <div className="CalculatorHouse">
       <h1 className="HeadCalc">Одна стена</h1>
@@ -137,7 +170,7 @@ export default function CalculatorWall() {
           <br />
           <span id="NameSize">Выбор материала</span>
           <br />
-          <select id="ChoiceMat"  value={ChoiceMat} onChange={(event) => setChoiceMat(event.target.value)}>
+          <select id="ChoiceMat"  value={ChoiceMat} onChange={handleSelectChange}>
             <option value="Одинарный">Одинарный(250x120x65)</option>
             <option value="Полуторный">Полуторный(250x120x88)</option>
             <option value="Двойной">Двойной(250x120x130)</option>
@@ -153,6 +186,7 @@ export default function CalculatorWall() {
             id="widtMat"
             value={widtMat}
             onChange={handleWidthMatChange}
+            disabled={inputDisabled}
           />{" "}
           <br />
           <span id="NameSize">Длина:</span> <br />
@@ -161,6 +195,7 @@ export default function CalculatorWall() {
             id="lengMat"
             value={lengMat}
             onChange={handleLengthMatChange}
+            disabled={inputDisabled}
           />{" "}
           <br />
           <span id="NameSize">Высота:</span> <br />
@@ -169,6 +204,7 @@ export default function CalculatorWall() {
             id="highMat"
             value={highMat}
             onChange={handleHeightMatChange}
+            disabled={inputDisabled}
           />
         </div>
         <div className="LineCalc"></div>
