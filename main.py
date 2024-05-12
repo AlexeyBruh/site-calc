@@ -139,7 +139,7 @@ def calculateHouse(input_data):
         v_brick = (length_brick*0.001) * (width_brick*0.001) * (height_brick*0.001)
     else:
         
-        conn = psycopg2.connect(dbname='BLAZEDtech', user='postgres', password='ei82mf', host='localhost')
+        conn = psycopg2.connect(dbname='bazedtech', user='postgres', password='qqqwww', host='localhost')
         cursor = conn.cursor()
         cursor.execute("SELECT volume FROM bricks WHERE type_brick = %s", (choice_mat))
         sizes = cursor.fetchall()
