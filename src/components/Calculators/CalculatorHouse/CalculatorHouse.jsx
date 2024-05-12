@@ -26,7 +26,7 @@ export default function CalculatorWall() {
 
   const fetchCalculator = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/calculate", {
+      const response = await axios.post("http://localhost:8000/calculateTwo", {
         ChoiceMat,
         widtMat,
         lengMat,
@@ -70,12 +70,12 @@ export default function CalculatorWall() {
       sethighMat(value);
     }
   };
-  const handleBrickworkChange = (event) => {
-    const value = event.target.value;
-    if (!isNaN(value) && Number(value) >= 0) {
-      SetBrickwork(value);
-    }
-  };
+  // const handleBrickworkChange = (event) => {
+  //   const value = event.target.value;
+  //   if (!isNaN(value) && Number(value) >= 0) {
+  //     SetBrickwork(value);
+  //   }
+  // };
   const handlePerimetreChange = (event) => {
     const value = event.target.value;
     if (!isNaN(value) && Number(value) >= 0) {
@@ -209,19 +209,20 @@ export default function CalculatorWall() {
         </div>
         <div className="LineCalc"></div>
         <div className="Calc">
-          <span className="HeadName">Габариты элемента строения</span> <br />
+          <span className="HeadName">Габариты элемента строения (в метрах)</span> <br />
           <img src={picBrickWall} alt="Кирпичи" className="CalcPicDiv" />
           <span id="NameSize">Тип кладки:</span> <br />
           <select
             id="SizeMat"
             value={Brickwork}
-            onChange={handleBrickworkChange}
+            onChange={(event) => SetBrickwork(event.target.value)}
           >
-            <option value={0.12}>В половину кирпича</option>
-            <option value={0.25}>В один кирпич</option>
-            <option value={0.38}>В полтора кирпича</option>
-            <option value={0.51}>В два кирпича</option>
-            <option value={0.64}>В два с половиной кирпича</option>
+            <option value=""></option>
+            <option value="0.12">В половину кирпича</option>
+            <option value="0.25">В один кирпич</option>
+            <option value="0.38">В полтора кирпича</option>
+            <option value="0.51">В два кирпича</option>
+            <option value="0.64">В два с половиной кирпича</option>
           </select>{" "}
           <br />
           <span id="NameSize">Периметр всех стен:</span>
