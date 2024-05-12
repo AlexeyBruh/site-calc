@@ -59,25 +59,25 @@
 
 .RowCalc {
   display: flex;
+  justify-content:space-between;
+}
+
+.RowCalc div {
+  margin-right: 5%;
 }
 
 #SizeMat {
-  height: 45px;
+  margin-right: 19%;
+  width: 276px;
+  height: 49px;
   border-radius: 3px;
   border-width: 1px;
   font-size: 30px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  width: 270px;
 }
 
-#SizeWall {
-  height: 45px;
-  border-radius: 3px;
-  border-width: 1px;
-  font-size: 30px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  width: 270px;
-}
 
 #but {
   text-align: center;

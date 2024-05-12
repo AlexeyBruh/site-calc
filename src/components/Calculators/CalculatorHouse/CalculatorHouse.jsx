@@ -4,44 +4,44 @@ import picChMark from "../Checkmark1.png";
 import axios from "axios";
 import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import picBrick from "../Кирпичи.svg";
-import picBrickWall from "../СтенаКирпичей.svg";
+import picBrickWall from "../дом-кирпича.png";
 
 export default function CalculatorWall() {
   const [widtMat, setwidtMat] = useState("");
-  const [widtWall, setwidtWall] = useState("");
   const [lengMat, setlengMat] = useState("");
-  const [lengWall, setlengWall] = useState("");
   const [highMat, sethighMat] = useState("");
-  const [highWall, sethighWall] = useState("");
-  const [SizeMat, setSizeMat] = useState("milimetre");
-  const [SizeWall, setSizeWall] = useState("milimetre");
+  const [Brickwork, SetBrickwork] = useState("");
+  const [Perimetre, SetPerimetre] = useState("");
+  const [HighWall, setHighWall] = useState("");
+  const [CountDoor, setCountDoor] = useState("");
+  const [CountWindow, setCountWindow] = useState("");
+  const [HighDoor, setHighDoor] = useState("");
+  const [HighWindow, setHighWindow] = useState("");
+  const [LengDoor, setLengDoor] = useState("");
+  const [LengWindow, setLengWindow] = useState("");
+
   const [result, setResult] = useState("");
-  const [CountWall, setCountWall] = useState("");
 
   const fetchCalculator = async () => {
     try {
       const response = await axios.post("http://localhost:8000/calculate", {
         widtMat,
-        widtWall,
         lengMat,
-        lengWall,
         highMat,
-        highWall,
-        SizeMat,
-        SizeWall,
-        CountWall,
+        Brickwork,
+        Perimetre,
+        HighWall,
+        CountDoor,
+        CountWindow,
+        HighDoor,
+        HighWindow,
+        LengDoor,
+        LengWindow,
       });
       const result = response.data.result;
       setResult(result);
     } catch (error) {
       console.error(error);
-    }
-  };
-
-  const handleCountWallChange = (event) => {
-    const value = event.target.value;
-    if (!isNaN(value) && Number(value) >= 0) {
-      setCountWall(value);
     }
   };
 
@@ -52,24 +52,11 @@ export default function CalculatorWall() {
     }
   };
 
-  const handleWidthWallChange = (event) => {
-    const value = event.target.value;
-    if (!isNaN(value) && Number(value) >= 0) {
-      setwidtWall(value);
-    }
-  };
 
   const handleLengthMatChange = (event) => {
     const value = event.target.value;
     if (!isNaN(value) && Number(value) >= 0) {
       setlengMat(value);
-    }
-  };
-
-  const handleLengthWallChange = (event) => {
-    const value = event.target.value;
-    if (!isNaN(value) && Number(value) >= 0) {
-      setlengWall(value);
     }
   };
 
@@ -79,11 +66,58 @@ export default function CalculatorWall() {
       sethighMat(value);
     }
   };
-
+  const handleBrickworkChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      SetBrickwork(value);
+    }
+  };
+  const handlePerimetreChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      SetPerimetre(value);
+    }
+  };
   const handleHeightWallChange = (event) => {
     const value = event.target.value;
     if (!isNaN(value) && Number(value) >= 0) {
-      sethighWall(value);
+      setHighWall(value);
+    }
+  };
+  const handleCountDoorChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setCountDoor(value);
+    }
+  };
+  const handleCountWindowChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setCountWindow(value);
+    }
+  };
+  const handleHighDoorChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setHighDoor(value);
+    }
+  };
+  const handleHighWindowChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setHighWindow(value);
+    }
+  };
+  const handleLengthDoorChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setLengDoor(value);
+    }
+  };
+  const handleLengthWindowChange = (event) => {
+    const value = event.target.value;
+    if (!isNaN(value) && Number(value) >= 0) {
+      setLengWindow(value);
     }
   };
 
@@ -123,69 +157,115 @@ export default function CalculatorWall() {
             value={highMat}
             onChange={handleHeightMatChange}
           />
-          <span id="NameSize">Еденица Измерения:</span> <br />
-          <select
-            id="SizeMat"
-            value={SizeMat}
-            onChange={(event) => setSizeMat(event.target.value)}
-          >
-            <option value="millimetre">мм</option>
-            <option value="centimetre">см</option>
-            <option value="metre">м</option>
-          </select>
         </div>
         <div className="LineCalc"></div>
         <div className="Calc">
           <span className="HeadName">Габариты элемента строения</span> <br />
-          <div className="RowCalc">
-            <div>
-              <span id="NameSize">Ширина:</span>
-
-              <input
-                type="number"
-                id="widtWall"
-                value={widtWall}
-                onChange={handleWidthWallChange}
-              />
-            </div>
-            <div>
-              <span id="NameSize">Количество стен:</span>
-              <input
-                type="number"
-                id="CountWall"
-                value={CountWall}
-                onChange={handleCountWallChange}
-              />
-            </div>
-          </div>
-          <span id="NameSize">Длина:</span>
-          <br />
           <img src={picBrickWall} alt="Кирпичи" className="CalcPicDiv" />
+          <span id="NameSize">Тип кладки:</span> <br />
+          <select
+            id="SizeMat"
+            value={Brickwork}
+            onChange={handleBrickworkChange}
+          >
+            <option value={0.12}>В половину кирпича</option>
+            <option value={0.25}>В один кирпич</option>
+            <option value={0.38}>В полтора кирпича</option>
+            <option value={0.51}>В два кирпича</option>
+            <option value={0.64}>В два с половиной кирпича</option>
+          </select>{" "}
+          <br />
+          <span id="NameSize">Периметр всех стен:</span>
+          <br />
           <input
             type="number"
-            id="lengWall"
-            value={lengWall}
-            onChange={handleLengthWallChange}
+            // id="lengWall"
+            value={Perimetre}
+            onChange={handlePerimetreChange}
           />{" "}
           <br />
           <span id="NameSize">Высота:</span> <br />
           <input
             type="number"
-            id="highWall"
-            value={highWall}
+            // id="highWall"
+            value={HighWall}
             onChange={handleHeightWallChange}
           />{" "}
           <br />
-          <span id="NameSize">Еденицы Измерения:</span> <br />
-          <select
-            id="SizeWall"
-            value={SizeWall}
-            onChange={(event) => setSizeWall(event.target.value)}
-          >
-            <option value="millimetre">мм</option>
-            <option value="centimetre">см</option>
-            <option value="metre">м</option>
-          </select>
+          <div className="RowCalc">
+            <div>
+              <span id="NameSize">Количество дверей:</span>
+              <br />
+              <input
+                type="number"
+                id="lengWall"
+                placeholder="По умолчанию 0"
+                value={CountDoor}
+                onChange={handleCountDoorChange}
+              />{" "}
+              <br />
+            </div>
+            <div>
+              <span id="NameSize">Количество окон:</span>
+              <br />
+              <input
+                type="number"
+                placeholder="По умолчанию 0"
+                id="lengWall"
+                value={CountWindow}
+                onChange={handleCountWindowChange}
+              />{" "}
+              <br />
+            </div>
+          </div>
+          <div className="RowCalc">
+            <div>
+              <span id="NameSize">Высота двери:</span>
+              <br />
+              <input
+                type="number"
+                id="lengWall"
+                value={HighDoor}
+                onChange={handleHighDoorChange}
+              />{" "}
+              <br />
+            </div>
+            <div>
+              <span id="NameSize">Высота окна:</span>
+              <br />
+              <input
+                type="number"
+                id="lengWall"
+                value={HighWindow}
+                onChange={handleHighWindowChange}
+              />{" "}
+              <br />
+            </div>
+          </div>
+          <div className="RowCalc">
+            <div>
+              <span id="NameSize">Длина двери:</span>
+              <br />
+              <input
+                type="number"
+                id="lengWall"
+                value={LengDoor}
+                onChange={handleLengthDoorChange}
+              />{" "}
+              <br />
+            </div>
+            <div>
+              <span id="NameSize">Длина окна:</span>
+              <br />
+              <input
+                type="number"
+                id="lengWall"
+                value={LengWindow}
+                onChange={handleLengthWindowChange}
+              />{" "}
+              <br />
+            </div>
+          </div>
         </div>
       </div>
       <div className="LineCalc"></div>
@@ -203,7 +283,7 @@ export default function CalculatorWall() {
             type="text"
             id="output"
             readOnly
-            value={result ? result * CountWall : "Заполните все поля"}
+            value={result ? result : "Заполните все поля"}
           />
         </div>
       </div>
