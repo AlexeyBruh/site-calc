@@ -67,7 +67,7 @@
 
 .RowCalc {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .RowCalc div {
@@ -85,7 +85,6 @@
   margin-bottom: 1rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-
 
 #but {
   text-align: center;

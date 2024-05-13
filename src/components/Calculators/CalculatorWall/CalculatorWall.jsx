@@ -83,7 +83,7 @@ export default function CalculatorWall() {
   };
 
   return (
-    <div className="CalculatorWall">
+    <div className="CalculatorWall" id="SectionCalcWall">
       <h1 className="HeadCalc">Одна стена</h1>
       <div>
         <div className="Calc">

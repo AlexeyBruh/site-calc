@@ -9,7 +9,7 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 1024px) {
+@media (width: 1024px) {
   #root{
     max-width: 1024px;
   }
@@ -56,6 +56,7 @@ body {
     width: 1020px;
     margin-left: 4px;
   }
+
   .LineCalc {
     width: 1024px;
   }
@@ -71,7 +72,175 @@ body {
     display: grid;
     margin: 0 auto;
     background-color: #ffffff;
-    width: 769px;
+    width: 768px;
     justify-content: center;
+  }
+  .main {
+    max-width: 768px;
+  }
+  header {
+    max-width:768px;
+  }
+  .MainName {
+    font-size: 30px;
+  }
+  header ul li a button {
+    padding: 0;
+    width: 150px;
+  }
+  .GuideTop {
+    max-width: 768px;
+  }
+  .GuidePage > p {
+    width: 720px;
+    font-size: 35px;
+    font-weight: 300;
+    margin: 1rem;
+    margin-left: 3rem;
+    margin-top: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .GuidePage > img {
+    margin-left: 5%;
+  }
+  .Calculators p {
+    width: 190px;
+    font-weight:100;
+    font-size: 15px;
+    display: none;
+  }
+  .Calculators div {
+    margin: auto;
+  }
+  .CalculatorWall {
+    width: 768px;
+    margin: 0;
+    margin-top: 63px;
+    margin-left: 4px;
+  }
+  .CalculatorHouse{
+    width: 764px;
+    margin: 0;
+    margin-top: 63px;
+    margin-left: 4px;
+  }
+  .CalcPicDiv {
+    display: none;
+  }
+  .Calc {
+    width: 764px;
+    margin-left: 4px;
+  }
+  .LineCalc {
+    width: 768px;
+  }
+  Footer {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  #root{
+    width: 425px;
+  }
+  body {
+    display: grid;
+    margin: 0 auto;
+    background-color: #ffffff;
+    width: 425px;
+    justify-content: center;
+  }
+  .main {
+    max-width: 425px;
+  }
+  header {
+    width: 100%;
+  }
+  header div a img {
+    width: 60px;
+  }
+  .MainName {
+    font-size: 25px;
+  }
+  header ul li a button {
+    padding: 0;
+    width: 60px;
+    font-size: 10px;
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+  #MainPic span img {
+    display: none;
+  }
+  .GuideTop {
+    max-width: 425px;
+  }
+  .GuidePage > p {
+    width: 390px;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .GuidePage > img {
+    width: 420px;
+    margin-left: 0;
+  }
+  .Calculators {
+    width: 425px;
+    height: 425px;
+  }
+  .Calculators div button {
+    width: 100px;
+    height: 100px;
+  }
+  .Calculators div button img {
+    width: 90px;
+    height: 90px;
+  }
+  .Calculators p {
+    width: 190px;
+    font-weight:100;
+    font-size: 15px;
+    display: none;
+  }
+  .Calculators div {
+    margin: auto;
+  }
+  .CalculatorWall {
+    width: 425px;
+    margin: 0;
+    margin-top: 63px;
+    margin-left: 4px;
+  }
+  .CalculatorHouse{
+    width: 421px;
+    height: 2500px;
+    margin: 0;
+    margin-top: 63px;
+    margin-left: 4px;
+  }
+  .CalcPicDiv {
+    display: none;
+  }
+  .Calc {
+    width: 421px;
+    margin-left: 4px;
+  }
+  .LineCalc {
+    width: 421px;
+  }
+  .RowCalc {
+    display: block;
+  }
+  #output {
+    width: 400px;
+  }
+  Footer {
+    width: 100%;
+  }
+  Footer span {
+    font-size: 14px;
   }
 }
