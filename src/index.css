@@ -9,7 +9,7 @@ body {
   justify-content: center;
 }
 
-@media (width: 1024px) {
+@media (max-width: 1024px) {
   #root{
     max-width: 1024px;
   }
@@ -24,6 +24,14 @@ body {
   }
   header {
     max-width:1024px;
+  }
+  .MainName {
+    font-size: 30px;
+  }
+  .ButtonsTop button {
+    padding: 0;
+    height: 125px;
+    width: 150px;
   }
   .GuideTop {
     max-width: 1024px;
@@ -84,7 +92,7 @@ body {
   .MainName {
     font-size: 30px;
   }
-  header ul li a button {
+  .ButtonsTop button {
     padding: 0;
     width: 150px;
   }
@@ -161,12 +169,13 @@ body {
   .MainName {
     font-size: 25px;
   }
-  header ul li a button {
-    padding: 0;
-    width: 60px;
-    font-size: 10px;
-    padding-top: 52px;
-    padding-bottom: 52px;
+  .ButtonsTop button {
+    font-size: 18px;
+    width: 100px;
+    height: 70px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
   }
   #MainPic span img {
     display: none;
@@ -236,6 +245,229 @@ body {
   }
   #output {
     width: 400px;
+  }
+  Footer {
+    width: 100%;
+  }
+  Footer span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 375px) {
+  #root{
+    width: 375px;
+  }
+  body {
+    display: grid;
+    margin: 0 auto;
+    background-color: #ffffff;
+    width: 375px;
+    justify-content: center;
+  }
+  .main {
+    max-width: 375px;
+  }
+  header {
+    width: 100%;
+  }
+  header div a img {
+    width: 60px;
+  }
+  .MainName {
+    font-size: 25px;
+  }
+  .ButtonsTop button {
+    font-size: 18px;
+    width: 100px;
+    height: 70px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+  }
+  #MainPic span img {
+    display: none;
+  }
+  .GuideTop {
+    max-width: 375px;
+  }
+  .GuidePage > p {
+    width: 355px;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .GuidePage > img {
+    width: 370px;
+    margin-left: 0;
+  }
+  .Calculators {
+    width: 375px;
+    height: 375px;
+  }
+  .Calculators div button {
+    width: 100px;
+    height: 100px;
+  }
+  .Calculators div button img {
+    width: 90px;
+    height: 90px;
+  }
+  .Calculators p {
+    width: 190px;
+    font-weight:100;
+    font-size: 15px;
+    display: none;
+  }
+  .Calculators div {
+    margin: auto;
+  }
+  .CalculatorWall {
+    width: 375px;
+    margin: 0;
+    margin-top: 63px;
+    margin-left: 4px;
+  }
+  .CalculatorHouse{
+    width: 371px;
+    height: 2500px;
+    margin: 0;
+    margin-top: 63px;
+    margin-left: 4px;
+  }
+  .CalcPicDiv {
+    display: none;
+  }
+  .Calc {
+    width: 371px;
+    margin-left: 4px;
+  }
+  .LineCalc {
+    width: 371px;
+  }
+  .RowCalc {
+    display: block;
+  }
+  #output {
+    width: 360px;
+  }
+  .ButtonDone {
+  width: 360px;
+  }
+  Footer {
+    width: 100%;
+  }
+  Footer span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 320px) {
+  #root{
+    width: 320px;
+  }
+  body {
+    display: grid;
+    margin: 0 auto;
+    background-color: #ffffff;
+    width: 320px;
+    justify-content: center;
+  }
+  .main {
+    max-width: 320px;
+  }
+  header {
+    width: 100%;
+  }
+  header div a img {
+    width: 60px;
+  }
+  .MainName {
+    font-size: 25px;
+  }
+  .ButtonsTop button {
+    font-size: 18px;
+    width: 100px;
+    height: 70px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+  }
+  #MainPic span {
+    font-size: 50px;
+  }
+  #MainPic span img {
+    display: none;
+  }
+  .GuideTop {
+    max-width: 320px;
+    font-size: 50px;
+  }
+  .GuidePage > p {
+    width: 290px;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0.5rem;
+    margin-top: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .GuidePage > img {
+    width: 320px;
+    margin-left: 0;
+  }
+  .Calculators {
+    width: 320px;
+    height: 320px;
+  }
+  .Calculators div button {
+    width: 100px;
+    height: 100px;
+  }
+  .Calculators div button img {
+    width: 90px;
+    height: 90px;
+  }
+  .Calculators p {
+    width: 190px;
+    font-weight:100;
+    font-size: 15px;
+    display: none;
+  }
+  .Calculators div {
+    margin: auto;
+  }
+  .CalculatorWall {
+    width: 320px;
+    margin: 0;
+    margin-top: 63px;
+    margin-left: 4px;
+  }
+  .CalculatorHouse{
+    width: 316px;
+    height: 2500px;
+    margin: 0;
+    margin-top: 63px;
+    margin-left: 4px;
+  }
+  .CalcPicDiv {
+    display: none;
+  }
+  .Calc {
+    width: 316px;
+    margin-left: 4px;
+  }
+  .LineCalc {
+    width: 316px;
+  }
+  .RowCalc {
+    display: block;
+  }
+  #output {
+    width: 305px;
+  }
+  .ButtonDone {
+  width: 305px;
   }
   Footer {
     width: 100%;

@@ -1,15 +1,26 @@
-import './Header.css'
-import Logo from '../Logo/Logo'
+import "./Header.css";
+import Logo from "../Logo/Logo";
 
 export default function Header() {
-    return (
-        <header>
-            <Logo />
-            <ul>
-                <li><a href="#SectionMain" ><button>Главная</button></a></li>
-                <li><a href="#SectionGuide"><button>Инструкция</button></a></li>
-                <li><a href="#SectionCalc"><button>Калькулятор</button></a></li>
-            </ul>
-        </header>
-    )
+  return (
+    <header>
+      <Logo />
+      <div className="navbar">
+        <div className="Drop">
+          <button className="Burger">&#9776;</button>
+          <div className="ButtonsTop">
+            <a href="#SectionMain">
+              <button>Главная</button>
+            </a>
+            <a href="#SectionGuide">
+              <button>Инструкция</button>
+            </a>
+            <a href="#SectionCalc">
+              <button>Калькулятор</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
 }

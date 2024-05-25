@@ -98,3 +98,10 @@
   background-color: #8bdbfd75;
   padding-left: 0.5rem;
 }
+
+@media (max-width: 320px) {
+  #ChoiceMat{
+  width: 305px;
+  font-size: 25px;
+  }
+}
